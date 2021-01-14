@@ -1,0 +1,43 @@
+﻿@page
+@model Proiect.Pages.Produse.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Adauga</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Anunt.Categorie" class="control-label"></label>
+                <input asp-for="Anunt.Categorie" class="form-control" />
+                <span asp-validation-for="Anunt.Categorie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Anunt.Produs" class="control-label"></label>
+                <input asp-for="Anunt.Produs" class="form-control" />
+                <span asp-validation-for="Anunt.Produs" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Anunt.Pret" class="control-label"></label>
+                <input asp-for="Anunt.Pret" class="form-control" />
+                <span asp-validation-for="Anunt.Pret" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Adauga" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
